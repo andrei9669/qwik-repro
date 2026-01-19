@@ -1,65 +1,25 @@
-# Qwik App ⚡️
+# Qwik Issues reproduction repo
 
-- [Qwik Docs](https://qwik.dev/)
-- [Discord](https://qwik.dev/chat)
-- [Qwik GitHub](https://github.com/QwikDev/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
+Aim of this repo is to store different reproductions of bugs/issues that were discovered.  
+Each issue is stored in a separate branch.
 
----
+## Branches
 
-## Project Structure
+### master
 
-This project is using Qwik with [QwikRouter](https://qwik.dev/docs/). QwikRouter is just an extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
+no issue, blank create qwik app in v2.
 
-Inside your project, you'll see the following directory structure:
+### conditional-rendering
 
-```
-├── public/
-│   └── ...
-└── src/
-    ├── components/
-    │   └── ...
-    └── routes/
-        └── ...
-```
+#### Error
 
-- `src/routes`: Provides the directory-based routing, which can include a hierarchy of `layout.tsx` layout files, and an `index.tsx` file as the page. Additionally, `index.ts` files are endpoints. Please see the [routing docs](https://qwik.dev/docs/routing/) for more info.
+> Error: Code(Q8): Actual value for useContext(context-c) can not be found, make sure some ancestor component has set a value using useContextProvider().
+> In the browser make sure that the context was used during SSR so its state was serialized.
 
-- `src/components`: Recommended directory for components.
+#### steps to reproduce
 
-- `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.
-
-## Add Integrations and deployment
-
-Use the `pnpm qwik add` command to add additional integrations. Some examples of integrations includes: Cloudflare, Netlify or Express Server, and the [Static Site Generator (SSG)](https://qwik.dev/docs/guides/static-site-generation/).
-
-```shell
-pnpm qwik add # or `pnpm qwik add`
-```
-
-## Development
-
-Development mode uses [Vite's development server](https://vitejs.dev/). The `dev` command will server-side render (SSR) the output during development.
-
-```shell
-npm start # or `pnpm start`
-```
-
-> Note: during dev mode, Vite may request a significant number of `.js` files. This does not represent a Qwik production build.
-
-## Preview
-
-The preview command will create a production build of the client modules, a production build of `src/entry.preview.tsx`, and run a local server. The preview server is only for convenience to preview a production build locally and should not be used as a production server.
-
-```shell
-pnpm preview # or `pnpm preview`
-```
-
-## Production
-
-The production build will generate client and server modules by running both client and server build commands. The build command will use Typescript to run a type check on the source code.
-
-```shell
-pnpm build # or `pnpm build`
-```
+1. `pnpm install`
+2. `pnpm run dev`
+3. open up the page
+4. click the `navigate` button
+5. Ctrl + R (refresh the page)
