@@ -23,5 +23,6 @@ export const ContextCProvider = component$(() => {
   });
 
   useContextProvider(ContextCId, signal);
+  useContext(ContextCId);
   return typeof signal.value === 'string' ? <Slot /> : <div>loading . . .</div>;
 });
