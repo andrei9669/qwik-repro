@@ -1,0 +1,11 @@
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - esbuild
+  - less
+  - sharp
+minimumReleaseAge: 10080
+minimumReleaseAgeExclude:
+  - '@qwik.dev/core'
+  - '@qwik.dev/router'
+  - '@qwik-ui/utils'
+  - 'eslint-plugin-qwik'
