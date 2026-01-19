@@ -22,5 +22,6 @@ export const ContextBProvider = component$(() => {
     signal.value = signalA.value;
   });
   useContextProvider(ContextBId, signal);
+  useContext(ContextBId);
   return typeof signal.value === 'string' ? <Slot /> : <div>loading . . .</div>;
 });
