@@ -23,3 +23,6 @@ no issue, blank create qwik app in v2.
 3. open up the page
 4. click the `navigate` button
 5. Ctrl + R (refresh the page)
+
+**what should happen**: page refreshes without issues and conditional rendering gets resolved on client side.  
+**what happens**: the error mention above happens and crashes the app.
